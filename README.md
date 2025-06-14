@@ -1,59 +1,63 @@
-# GestionProductAngular
+# Projet de Gestion de Produits - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+## Description
 
-## Development server
+Ce projet est une application Angular de gestion de produits. Il permet de visualiser, ajouter, modifier et supprimer des produits. L'application communique avec une API backend pour récupérer et manipuler les données des produits.
 
-To start a local development server, run:
+## Technologies Utilisées
+
+*   Angular
+*   TypeScript
+*   HTML
+*   CSS
+*   Bootstrap
+*   RxJS
+*   HttpClient (pour les requêtes HTTP)
+
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
+
+*   [Node.js](https://nodejs.org/) (version 16 ou supérieure)
+*   [npm](https://www.npmjs.com/) (Node Package Manager)
+*   [Angular CLI](https://cli.angular.io/) (dernière version)
+
+
+## Configuration
+
+Configurez l'URL de l'API backend dans le fichier `src/app/services/products.service.ts`. Assurez-vous que l'API backend est en cours d'exécution.
+
+```typescript
+  return this.http.get("http://localhost:8081/api/products/products");
+```
+
+## Lancement de l'Application
+
+Pour lancer l'application en mode développement, utilisez la commande suivante :
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ouvrez votre navigateur et accédez à `http://localhost:4200/`.
 
-## Code scaffolding
+## Fonctionnalités
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+*   **Affichage des produits :** Visualisation de la liste des produits avec leurs détails (nom, prix, sélection).
+*   **Suppression de produits :** Suppression d'un produit existant.
 
-```bash
-ng generate component component-name
-```
+## Structure du Projet
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+*   `src/app/products/products.component.ts`: Composant principal pour la gestion des produits.
+*   `src/app/products/products.component.html`: Template HTML pour l'affichage des produits.
+*   `src/app/services/products.service.ts`: Service Angular pour la communication avec l'API backend.
 
-```bash
-ng generate --help
-```
+## Démonstration
 
-## Building
+### Capture d'écran 1: Liste des produits
 
-To build the project run:
+<img src="./imgs/products-page.png">
 
-```bash
-ng build
-```
+### Capture d'écran 2: Suppression d'un produit
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<img src="./imgs/img.png">
