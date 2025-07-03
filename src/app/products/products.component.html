@@ -1,0 +1,38 @@
+<div class="p-5">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>selected</th>
+      </tr>
+      </thead>
+      @if (products) {
+        <tbody>
+          @for (p of products; track p) {
+            <tr>
+              <td>{{ p.id }}</td>
+              <td>{{ p.name }}</td>
+              <td>{{ p.price }}</td>
+              <td>
+                @if (p.selected) {
+                  <i class="bi bi-check-circle"></i>
+                } @else {
+                  <i class="bi bi-circle"></i>
+                }
+              <td>
+              <button (click)="handleDelete(p)" class="btn btn-outline-danger">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+            </tr>
+          }
+        </tbody>
+      }
+    </table>
+
+  </div>
+
+</div>
